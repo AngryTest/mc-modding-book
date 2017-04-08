@@ -13,7 +13,9 @@ gulp.task('build-books', [
     'build-books.move-article-files',
     'build-books.move-libs',
     'build-books.handle-scripts',
-    'build-books.handle-styles'
+    'build-books.handle-styles',
+    'build-books.handle-images',
+    'build-books.handle-fonts'
 ]);
 
 /* ================================================================================================================== */
@@ -71,4 +73,23 @@ gulp.task('build-books.handle-styles', () => {
         .pipe(autoprefixer())
         .pipe(clean_css())
         .pipe(gulp.dest('book/styles/'));
+});
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Moving book images */
+/* ------------------------------------------------------------------------------------------------------------------ */
+gulp.task('build-books.handle-images', () => {
+    return gulp.src('site/book/images/**/*.{png,gif,jpg,jpeg}')
+        .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
+        .pipe(imagemin())
+        .pipe(gulp.dest('book/images'));
+});
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Moving book images */
+/* ------------------------------------------------------------------------------------------------------------------ */
+gulp.task('build-books.handle-fonts', () => {
+    return gulp.src('site/book/fonts/**/*')
+        .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
+        .pipe(gulp.dest('book/styles/fonts'));
 });
