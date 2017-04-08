@@ -27,7 +27,7 @@ gulp.task('build-books.handle-article-images', () => {
     return gulp.src('book/**/*.{png,gif,jpg,jpeg}')
         .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
         .pipe(imagemin())
-        .pipe(gulp.dest('docs/book'));
+        .pipe(gulp.dest('book'));
 });
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -36,7 +36,7 @@ gulp.task('build-books.handle-article-images', () => {
 gulp.task('build-books.move-article-files', () => {
     return gulp.src(['book/**/!(*.png|*.gif|*.jpg|*.jpeg|article.md|config.yml)'])
         .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
-        .pipe(gulp.dest('docs/book'));
+        .pipe(gulp.dest('book'));
 });
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -45,7 +45,7 @@ gulp.task('build-books.move-article-files', () => {
 gulp.task('build-books.move-libs', () => {
     return gulp.src('site/book/libs/**/*')
         .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
-        .pipe(gulp.dest('docs/book/libs'));
+        .pipe(gulp.dest('book/libs'));
 });
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -57,7 +57,7 @@ gulp.task('build-books.handle-scripts', () => {
         .pipe(concat('script.min.js', {newLine: ''}))
         .pipe(babel({ presets: ['es2015'] }))
         .pipe(uglify_js())
-        .pipe(gulp.dest('docs/book/scripts/'));
+        .pipe(gulp.dest('book/scripts/'));
 });
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -70,5 +70,5 @@ gulp.task('build-books.handle-styles', () => {
         .pipe(concat('style.min.css', {newLine: ''}))
         .pipe(autoprefixer())
         .pipe(clean_css())
-        .pipe(gulp.dest('docs/book/styles/'));
+        .pipe(gulp.dest('book/styles/'));
 });
