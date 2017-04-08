@@ -52,7 +52,7 @@ function build_book(version_dir, API_dir, category_dir, article_dir) {
     );
 
     /* Saving page */
-    let path = `docs/book/${version_dir}/${API_dir}/${category_dir}/${article_dir}`;
+    let path = `book/${version_dir}/${API_dir}/${category_dir}/${article_dir}`;
 
     mkdirp.sync(path);
 

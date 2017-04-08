@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Создание блока - Minecraft Modding</title>
+<title>Создание растения - Minecraft Modding</title>
 
 <link rel="icon" href="http://mcmodding.ru/book/favicon.png">
 
@@ -15,10 +15,10 @@
 <!-- Google Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<meta property="og:title"       content="Создание блока">
+<meta property="og:title"       content="Создание растения">
 <meta property="og:description" content="Создание простейшего блока и добавление его в игру. Привязка к блоку текстур.">
 <meta property="og:type"        content="article">
-<meta property="og:url"         content="http://mcmodding.ru/book/1.8.1/forge/entity/index">
+<meta property="og:url"         content="http://mcmodding.ru/book/1.8.1/forge/entity/plant">
 <meta property="og:image"       content="">
 <!-- jQuery -->
 <script src="http://mcmodding.ru/book/libs/jQuery/jquery-3.2.0.min.js"></script>
@@ -144,8 +144,8 @@
                     <a href="http://mcmodding.ru/book/1.8.1/forge/entity/index/index" class="category-article">Сущность</a>
 
                     <div class="category-articles">
-                            <a href="http://mcmodding.ru/book/1.8.1/forge/entity/index" class="article selected">Создание блока</a>
-                            <a href="http://mcmodding.ru/book/1.8.1/forge/entity/plant" class="article ">Создание растения</a>
+                            <a href="http://mcmodding.ru/book/1.8.1/forge/entity/index" class="article ">Создание блока</a>
+                            <a href="http://mcmodding.ru/book/1.8.1/forge/entity/plant" class="article selected">Создание растения</a>
                             <a href="http://mcmodding.ru/book/1.8.1/forge/entity/interactive" class="article ">Интерактивный блок</a>
                     </div>
 
@@ -168,7 +168,7 @@
 </nav><article>
     <div class="inner">
 
-        <a href="https://github.com/mc-modding/mc-modding-book/blob/master/book/1.8.1/forge/entity/index/article.md" target="_blank" class="edit-article"><i class="material-icons">mode_edit</i><span>Редактировать</span></a>
+        <a href="https://github.com/mc-modding/mc-modding-book/blob/master/book/1.8.1/forge/entity/plant/article.md" target="_blank" class="edit-article"><i class="material-icons">mode_edit</i><span>Редактировать</span></a>
 
         <p>Создать свой блок так же просто, как и предмет. Создадим класс BlocksRegister и в нём пропишем методы <code>register()</code>, <code>registerBlock()</code> и <code>registerRender()</code>.</p>
 <pre><code class="java language-java">// BlockRegister.java
