@@ -18,8 +18,10 @@ git remote add upstream "https://$GH_TOKEN@github.com/mc-modding/mc-modding-book
 git fetch upstream
 git reset upstream/gh-pages
 
+echo "mcmodding.ru" > CNAME
+
 touch .
 
 git add -A .
-git commit -m "rebuild pages at ${rev}"
+git commit -m "Automatic book generation base on ${rev}"
 git push -q upstream HEAD:gh-pages
