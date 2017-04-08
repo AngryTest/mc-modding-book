@@ -17,7 +17,7 @@ const article_view =    require('../views/article.view');
 const head_view =       require('../views/head.view');
 
 /* Removing 'book' directory from 'docs' directory */
-rimraf.sync('docs/book');
+rimraf.sync('./');
 
 /* Generating book pages */
 let versions_dirs = utils.get_directories(`book`);
