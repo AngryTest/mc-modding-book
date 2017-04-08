@@ -54,7 +54,7 @@ gulp.task('build-books.move-libs', () => {
 gulp.task('build-books.handle-scripts', () => {
     return gulp.src('site/book/scripts/**/*.js')
         .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
-        .pipe(concat('script.min.js', {newLine: ''}))
+        .pipe(concat('book.min.js', {newLine: ''}))
         .pipe(babel({ presets: ['es2015'] }))
         .pipe(uglify_js())
         .pipe(gulp.dest('book/scripts/'));
@@ -67,7 +67,7 @@ gulp.task('build-books.handle-styles', () => {
     return gulp.src('site/book/styles/**/*.scss')
         .pipe(plumber(function (error) { console.log(error); this.emit('end'); }))
         .pipe(scss_css())
-        .pipe(concat('style.min.css', {newLine: ''}))
+        .pipe(concat('book.min.css', {newLine: ''}))
         .pipe(autoprefixer())
         .pipe(clean_css())
         .pipe(gulp.dest('book/styles/'));
