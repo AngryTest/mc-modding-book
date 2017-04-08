@@ -10,6 +10,8 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
+cd _site
+
 git init
 git config user.name "CMTV"
 git config user.email "newpetya@inbox.ru"
