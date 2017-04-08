@@ -1,0 +1,53 @@
+@import 'const';
+
+.edit-article {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: inherit;
+
+	padding: 0.5em;
+
+	border: 1px solid #ebebeb;
+
+	width: 200px;
+
+	float: right;
+
+	span {
+		padding-left: 0.5em;
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		color: #3366BB;
+	}
+}
+
+pre code {
+	border-left: 2px solid #3366BB;
+	background: #F6FAFF;
+	padding: 1em;
+}
+
+a {
+	text-decoration: none;
+
+	color: #3366BB;
+
+	transition: background 0.15s;
+
+	background: transparent;
+
+	&:hover {
+		background: #E7F2FF;
+	}
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}

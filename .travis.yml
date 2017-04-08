@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - stable
+install:
+  - npm install js-yaml
+  - npm install mustache
+  - npm install mkdirp
+  - npm install rimraf
+  - npm install showdown
+  - npm install gulp
+  - npm install gulp-autoprefixer gulp-clean-css gulp-concat gulp-imagemin gulp-plumber gulp-sass gulp-uglify gulp-babel babel-preset-es2015
+script: node site/book/_tools/processes/build-books && gulp build-books
+after_success:
+ - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
+env:
+  global:
+    - secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQnrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="

@@ -1,0 +1,16 @@
+<!-- jQuery -->
+<script src="{{{book_root}}}/libs/jQuery/jquery-3.2.0.min.js"></script>
+
+<!-- Include scrollbar width in site width -->
+<script src="{{{book_root}}}/libs/mq.genie/mq.genie.min.js"></script>
+
+<!-- highlight.js -->
+<link href="{{{book_root}}}/libs/highlight/styles/default.css" rel="stylesheet">
+<script src="{{{book_root}}}/libs/highlight/highlight.pack.js"></script>
+<script>
+    $(() => {
+        $('pre code, code').each( (i, element) => {
+            hljs.highlightBlock(element);
+        });
+    });
+</script>
